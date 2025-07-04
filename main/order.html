@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crumby Cafe</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="order.css" />
+    <script src="order.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h1>Welcome to Crumby Cafe!</h1>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="login.html" class="logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="order-container">
+        <h2>Order Your Favorite Items</h2>
+        <h3>Read this before make an order. Thank you.</h3>
+        <p>- Please select the items you want to order and specify the quantity.</p>
+        <p>- Click "Add Item" to add more items to your order.</p>
+        <p>- Click "Place Order" to submit your order.</p>
+        <p>- If you want to cancel order, click "remove" then click "Place Order" to update your order.</p>
+        <p>- If you want to add order after place order, just add more quantity or "Add Item" and click "Place Order" again.</p><br>
+        <form onsubmit="return validateOrder()" action="order.html" method="post">
+            <div id="order-items"></div>
+            <button type="button" onclick="addOrderItem()">Add Item</button>
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+
+    <div id="receipt" class="receipt-container" style="display: none;">
+        <h3>Receipt [Please Pay at Counter]</h3>
+        <ul id="receipt-list"></ul>
+    </div>
+
+    
+</body>
+</html>
